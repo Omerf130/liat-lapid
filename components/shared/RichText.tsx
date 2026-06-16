@@ -1,4 +1,4 @@
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 import styles from "./RichText.module.scss";
 
 interface RichTextProps {
@@ -7,9 +7,17 @@ interface RichTextProps {
   light?: boolean;
 }
 
-export default function RichText({ html, className = "", light = false }: RichTextProps) {
-  const sanitized = DOMPurify.sanitize(html, {
-    USE_PROFILES: { html: true },
+export default function RichText({
+  html,
+  className = "",
+  light = false,
+}: RichTextProps) {
+  const sanitized = sanitizeHtml(html, {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img", "h1", "h2"]),
+    allowedAttributes: {
+      ...sanitizeHtml.defaults.allowedAttributes,
+      a: ["href", "target", "rel"],
+    },
   });
 
   if (!sanitized) {

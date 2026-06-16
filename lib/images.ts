@@ -7,5 +7,6 @@ export function publicImageExists(src: string): boolean {
     return true;
   }
   if (!src.startsWith("/")) return false;
-  return fs.existsSync(path.join(process.cwd(), "public", src));
+  const relativePath = src.replace(/^\//, "");
+  return fs.existsSync(path.join(process.cwd(), "public", relativePath));
 }
