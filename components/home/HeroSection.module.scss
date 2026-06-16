@@ -1,0 +1,71 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-block: calc(#{$header-height} + #{$space-lg}) $space-xl;
+  background: linear-gradient(160deg, $color-navy 0%, $color-charcoal 45%, $color-black 100%);
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba($color-navy, 0.88) 0%,
+    rgba($color-charcoal, 0.75) 50%,
+    rgba($color-black, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  @include container;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.heroBadge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  margin-bottom: $space-md;
+  font-size: 0.875rem;
+  color: $color-gold;
+  border: 1px solid $color-border-gold;
+  border-radius: 999px;
+}
+
+.heroTitle {
+  @include gold-gradient-text;
+  font-family: $font-heading;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: $space-sm;
+}
+
+.heroDescription {
+  color: rgba($color-cream, 0.85);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  max-width: 40rem;
+  margin-inline: auto;
+  margin-bottom: $space-lg;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  justify-content: center;
+}

@@ -1,0 +1,16 @@
+@use '../../../../styles/variables' as *;
+
+.icon {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: $space-md;
+  line-height: 1;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  margin-top: $space-xl;
+  justify-content: center;
+}

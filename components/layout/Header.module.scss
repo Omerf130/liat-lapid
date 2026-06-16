@@ -1,0 +1,218 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 100;
+  height: $header-height;
+  transition: background $transition-base, box-shadow $transition-base;
+
+  &.scrolled,
+  &.menuOpen {
+    background: rgba($color-navy, 0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.inner {
+  @include container;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.logoName {
+  font-family: $font-heading;
+  font-size: 1.35rem;
+  font-weight: 700;
+  @include gold-gradient-text;
+}
+
+.logoSub {
+  font-size: 0.7rem;
+  color: rgba($color-cream, 0.7);
+  letter-spacing: 0.04em;
+}
+
+.nav {
+  flex: 1;
+  display: none;
+
+  @include respond-to(lg) {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-md;
+  list-style: none;
+}
+
+.navLink,
+.mobileLink {
+  position: relative;
+  font-size: 0.95rem;
+  color: rgba($color-cream, 0.85);
+  transition: color $transition-fast;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    inset-inline: 0;
+    height: 2px;
+    background: $color-gold;
+    transform: scaleX(0);
+    transition: transform $transition-fast;
+  }
+
+  &:hover {
+    color: $color-gold-light;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.activeLink {
+  position: relative;
+  font-size: 0.95rem;
+  color: $color-gold;
+  transition: color $transition-fast;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    inset-inline: 0;
+    height: 2px;
+    background: $color-gold;
+    transform: scaleX(1);
+  }
+}
+
+.cta {
+  @include button-primary;
+  display: none;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+
+  @include respond-to(lg) {
+    display: inline-flex;
+  }
+}
+
+.menuToggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  margin-inline-start: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $color-gold;
+    transition: transform $transition-fast, opacity $transition-fast;
+    margin-inline: auto;
+  }
+
+  @include respond-to(lg) {
+    display: none;
+  }
+}
+
+.menuOpen .menuToggle {
+  span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  span:nth-child(2) {
+    opacity: 0;
+  }
+
+  span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  top: $header-height;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $transition-base;
+
+  @include respond-to(lg) {
+    display: none;
+  }
+}
+
+.menuOpen .mobileOverlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileNav {
+  position: fixed;
+  top: $header-height;
+  inset-inline-start: 0;
+  width: min(320px, 85vw);
+  height: calc(100vh - #{$header-height});
+  background: $color-navy;
+  padding: $space-lg $space-md;
+  transform: translateX(100%);
+  transition: transform $transition-base;
+  overflow-y: auto;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  @include respond-to(lg) {
+    display: none;
+  }
+}
+
+.menuOpen .mobileNav {
+  transform: translateX(0);
+}
+
+.mobileLink {
+  display: block;
+  padding: $space-sm 0;
+  font-size: 1.1rem;
+}
+
+.mobileCta {
+  @include button-primary;
+  width: 100%;
+  margin-top: $space-lg;
+}

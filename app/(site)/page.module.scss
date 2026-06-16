@@ -1,0 +1,80 @@
+@use '../../styles/variables' as *;
+
+.aboutText {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: $color-text-muted;
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.employerPreview {
+  display: grid;
+  gap: $space-xl;
+  align-items: center;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.employerText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: $color-text-muted;
+  margin-top: $space-md;
+}
+
+.employerCards {
+  display: grid;
+  gap: $space-sm;
+}
+
+.richTextWrap {
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: $space-lg;
+
+  :global(.content) {
+    color: rgba($color-cream, 0.85);
+  }
+}
+
+.cardGridSpaced {
+  margin-top: $space-md;
+}
+
+.lectureCard {
+  padding: $space-lg;
+  background: $color-white;
+  border: 1px solid rgba(201, 169, 98, 0.25);
+  border-radius: $radius-lg;
+  height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(201, 169, 98, 0.15);
+  }
+}
+
+.lectureIcon {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: $space-sm;
+}
+
+.lectureTitle {
+  font-family: var(--font-frank), 'Frank Ruhl Libre', serif;
+  font-size: 1.125rem;
+  color: $color-navy;
+  margin-bottom: $space-xs;
+}
+
+.lectureDesc {
+  font-size: 0.925rem;
+  line-height: 1.7;
+  color: $color-text-muted;
+}

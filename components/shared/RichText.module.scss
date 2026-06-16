@@ -1,0 +1,51 @@
+@use '../../styles/variables' as *;
+
+.content {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: $color-text-dark;
+
+  p {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h2, h3 {
+    font-family: $font-heading;
+    color: $color-navy;
+    margin-block: 1.5rem 0.75rem;
+  }
+
+  ul, ol {
+    margin-bottom: 1rem;
+    padding-inline-start: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.375rem;
+  }
+
+  a {
+    color: $color-gold-dark;
+    text-decoration: underline;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+.light {
+  color: rgba($color-cream, 0.85);
+
+  h2, h3 {
+    color: $color-cream;
+  }
+
+  a {
+    color: $color-gold-light;
+  }
+}

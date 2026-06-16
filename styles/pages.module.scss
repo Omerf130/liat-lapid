@@ -1,0 +1,130 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.section {
+  @include section-padding;
+}
+
+.sectionLight {
+  background: $color-ivory;
+}
+
+.sectionDark {
+  background: linear-gradient(180deg, $color-navy 0%, $color-charcoal 100%);
+}
+
+.sectionCream {
+  background: $color-cream;
+}
+
+.container {
+  @include container;
+}
+
+.containerNarrow {
+  @include container-narrow;
+}
+
+.cardGrid {
+  display: grid;
+  gap: $space-md;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cardGridFour {
+  display: grid;
+  gap: $space-md;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.advantageGrid {
+  display: grid;
+  gap: $space-md;
+
+  @include respond-to(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sectionAction {
+  display: flex;
+  justify-content: center;
+  margin-top: $space-lg;
+}
+
+.splitGrid {
+  display: grid;
+  gap: $space-xl;
+  align-items: center;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contactGrid {
+  display: grid;
+  gap: $space-xl;
+  align-items: start;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pageContent {
+  @include section-padding;
+  background: $color-ivory;
+}
+
+.contentBlock {
+  @include container-narrow;
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  border: 1px solid $color-border-gold;
+  box-shadow: $shadow-md;
+  margin-bottom: $space-lg;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.imagePlaceholder {
+  aspect-ratio: 4 / 3;
+  border-radius: $radius-lg;
+  background: linear-gradient(135deg, $color-navy, $color-charcoal);
+  border: 1px solid $color-border-gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $space-lg;
+
+  span {
+    font-size: 3rem;
+    opacity: 0.4;
+  }
+}

@@ -1,4 +1,8 @@
 import { config } from "dotenv";
+
+config({ path: ".env.local" });
+config({ path: ".env" });
+
 import bcrypt from "bcryptjs";
 import { connectDB } from "../lib/db";
 import {
@@ -11,20 +15,17 @@ import SiteSettings from "../models/SiteSettings";
 import PracticeArea from "../models/PracticeArea";
 import Advantage from "../models/Advantage";
 
-config({ path: ".env.local" });
-config();
-
 async function seed() {
   const { MONGODB_URI, ADMIN_EMAIL, ADMIN_PASSWORD } = process.env;
 
   if (!MONGODB_URI) {
-    console.error("❌ MONGODB_URI is missing. Add it to .env.local");
+    console.error("❌ MONGODB_URI is missing. Add it to .env or .env.local");
     process.exit(1);
   }
 
   if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
     console.error(
-      "❌ ADMIN_EMAIL and ADMIN_PASSWORD are required in .env.local"
+      "❌ ADMIN_EMAIL and ADMIN_PASSWORD are required in .env or .env.local"
     );
     process.exit(1);
   }

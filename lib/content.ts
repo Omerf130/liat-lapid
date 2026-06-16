@@ -53,8 +53,15 @@ export async function getSiteSettings(): Promise<SiteSettingsData> {
     if (!doc) {
       return defaultSiteSettings;
     }
-    const { key: _key, createdAt: _c, updatedAt: _u, ...data } = doc;
-    return mergeSiteSettings(data as SiteSettingsData);
+    return mergeSiteSettings({
+      hero: doc.hero,
+      about: doc.about,
+      employerGuidance: doc.employerGuidance,
+      employeeGuidance: doc.employeeGuidance,
+      lectures: doc.lectures,
+      contact: doc.contact,
+      seo: doc.seo,
+    });
   } catch {
     return defaultSiteSettings;
   }

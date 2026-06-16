@@ -1,0 +1,93 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background: linear-gradient(180deg, $color-charcoal 0%, $color-black 100%);
+  color: rgba($color-cream, 0.85);
+  padding-block: $space-xl $space-lg;
+  border-top: 1px solid $color-border-gold;
+}
+
+.inner {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  gap: $space-lg;
+  margin-bottom: $space-xl;
+
+  @include respond-to(md) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.logo {
+  font-family: $font-heading;
+  font-size: 1.75rem;
+  @include gold-gradient-text;
+  margin-bottom: $space-xs;
+}
+
+.tagline {
+  font-size: 0.875rem;
+  color: $color-gold;
+  margin-bottom: $space-sm;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba($color-cream, 0.65);
+  max-width: 28rem;
+}
+
+.columnTitle {
+  font-family: $font-heading;
+  font-size: 1rem;
+  color: $color-gold;
+  margin-bottom: $space-sm;
+}
+
+.links,
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+
+  a {
+    font-size: 0.9rem;
+    color: rgba($color-cream, 0.75);
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-gold-light;
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+  padding-top: $space-lg;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: rgba($color-cream, 0.5);
+
+  @include respond-to(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    color: $color-gold;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-gold-light;
+    }
+  }
+}

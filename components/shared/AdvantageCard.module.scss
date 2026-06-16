@@ -1,0 +1,46 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.card {
+  text-align: center;
+  padding: $space-lg $space-md;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid $color-border-gold;
+  border-radius: $radius-lg;
+  transition: transform $transition-base, background $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    background: rgba(201, 169, 98, 0.08);
+  }
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto $space-md;
+  border-radius: 50%;
+  background: rgba(201, 169, 98, 0.12);
+  border: 1px solid $color-border-gold;
+}
+
+.icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: 1.125rem;
+  color: $color-cream;
+  margin-bottom: $space-xs;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba($color-cream, 0.7);
+}
