@@ -1,0 +1,94 @@
+@use 'variables' as *;
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+@mixin container-narrow {
+  width: 100%;
+  max-width: $container-narrow;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+@mixin section-padding {
+  padding-block: $space-section;
+}
+
+@mixin gold-gradient-text {
+  background: linear-gradient(135deg, $color-gold-light 0%, $color-gold 50%, $color-gold-dark 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin gold-border-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid $color-border-gold;
+  border-radius: $radius-lg;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-gold;
+    border-color: rgba(201, 169, 98, 0.6);
+  }
+}
+
+@mixin button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xs;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, $color-gold-light, $color-gold-dark);
+  color: $color-navy;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-gold;
+  }
+}
+
+@mixin button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xs;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: $color-gold;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid $color-gold;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: background $transition-fast, color $transition-fast;
+
+  &:hover {
+    background: rgba(201, 169, 98, 0.12);
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $bp-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $bp-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $bp-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $bp-xl) { @content; }
+  }
+}

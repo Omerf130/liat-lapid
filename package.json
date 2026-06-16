@@ -1,0 +1,38 @@
+{
+  "name": "liat-lapid",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@tiptap/extension-link": "^3.26.1",
+    "@tiptap/react": "^3.26.1",
+    "@tiptap/starter-kit": "^3.26.1",
+    "@vercel/blob": "^2.4.0",
+    "bcryptjs": "^3.0.3",
+    "framer-motion": "^12.40.0",
+    "isomorphic-dompurify": "^3.17.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.0",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sass": "^1.101.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tsx": "^4.22.4",
+    "typescript": "^5"
+  }
+}

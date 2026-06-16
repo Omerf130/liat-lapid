@@ -1,0 +1,56 @@
+// Colors — luxury gold + dark palette
+$color-gold: #c9a962;
+$color-gold-light: #e2c878;
+$color-gold-dark: #a8893f;
+$color-navy: #0d1b2a;
+$color-navy-light: #1b2838;
+$color-charcoal: #1a1a1a;
+$color-black: #0a0a0a;
+$color-cream: #f5f0e8;
+$color-ivory: #faf8f4;
+$color-white: #ffffff;
+$color-text-dark: #2c2c2c;
+$color-text-muted: #6b6b6b;
+$color-border-gold: rgba(201, 169, 98, 0.35);
+$color-overlay-dark: rgba(13, 27, 42, 0.82);
+
+// Typography
+$font-heading: var(--font-frank), 'Frank Ruhl Libre', serif;
+$font-body: var(--font-heebo), 'Heebo', sans-serif;
+
+// Spacing
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2.5rem;
+$space-xl: 4rem;
+$space-2xl: 6rem;
+$space-section: clamp(4rem, 8vw, 7rem);
+
+// Layout
+$container-max: 1200px;
+$container-narrow: 900px;
+$header-height: 80px;
+
+// Border radius
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.18);
+$shadow-gold: 0 4px 24px rgba(201, 169, 98, 0.25);
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
