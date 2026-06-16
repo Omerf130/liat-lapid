@@ -1,0 +1,52 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-md;
+  background: #f4f4f6;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  padding: $space-lg;
+  background: $color-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: $space-sm;
+  font-size: 0.75rem;
+  color: $color-gold-dark;
+  background: rgba(201, 169, 98, 0.12);
+  border-radius: 999px;
+}
+
+.title {
+  color: $color-navy;
+  margin-bottom: $space-xs;
+}
+
+.subtitle {
+  color: $color-text-dark;
+  margin-bottom: $space-md;
+  direction: ltr;
+}
+
+.note {
+  color: $color-text-muted;
+  font-size: 0.9rem;
+  margin-bottom: $space-lg;
+}
+
+.logout {
+  @include button-secondary;
+}
