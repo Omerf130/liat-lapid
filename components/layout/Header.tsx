@@ -28,7 +28,11 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header
+    <>
+      <a href="#main-content" className={styles.skipLink}>
+        דלג לתוכן
+      </a>
+      <header
       className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${
         menuOpen ? styles.menuOpen : ""
       }`}
@@ -105,5 +109,6 @@ export default function Header() {
         </Link>
       </nav>
     </header>
+    </>
   );
 }

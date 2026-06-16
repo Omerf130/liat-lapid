@@ -114,6 +114,7 @@ export default function SubmissionsPage() {
         {submissions.length === 0 ? (
           <p style={{ marginTop: "1rem", color: "#6b6b6b" }}>אין פניות להצגה.</p>
         ) : (
+          <div className={formStyles.tableWrap}>
           <table className={formStyles.table} style={{ marginTop: "1rem" }}>
             <thead>
               <tr>
@@ -173,6 +174,7 @@ export default function SubmissionsPage() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </div>
     </>

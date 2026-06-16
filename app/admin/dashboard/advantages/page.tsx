@@ -148,6 +148,7 @@ export default function AdvantagesPage() {
       </div>
 
       <div className={formStyles.card}>
+        <div className={formStyles.tableWrap}>
         <table className={formStyles.table}>
           <thead>
             <tr>
@@ -183,6 +184,7 @@ export default function AdvantagesPage() {
             ))}
           </tbody>
         </table>
+        </div>
 
         {!editingId && (
           <button

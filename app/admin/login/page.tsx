@@ -1,6 +1,12 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import LoginForm from "./LoginForm";
 import styles from "./login.module.scss";
+
+export const metadata: Metadata = {
+  title: "התחברות",
+  robots: { index: false, follow: false },
+};
 
 export default function AdminLoginPage() {
   return (

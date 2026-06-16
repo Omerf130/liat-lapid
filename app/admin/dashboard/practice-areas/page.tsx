@@ -155,6 +155,7 @@ export default function PracticeAreasPage() {
       </div>
 
       <div className={formStyles.card}>
+        <div className={formStyles.tableWrap}>
         <table className={formStyles.table}>
           <thead>
             <tr>
@@ -202,6 +203,7 @@ export default function PracticeAreasPage() {
             ))}
           </tbody>
         </table>
+        </div>
 
         {!editingId && (
           <button

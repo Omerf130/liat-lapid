@@ -1,0 +1,56 @@
+@use '../../styles/variables' as *;
+
+.page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.inner {
+  max-width: 520px;
+  padding: $space-xl $space-md;
+}
+
+.code {
+  display: block;
+  font-family: $font-heading;
+  font-size: clamp(4rem, 12vw, 6rem);
+  line-height: 1;
+  color: rgba($color-gold, 0.35);
+  margin-bottom: $space-sm;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  color: $color-navy;
+  margin-bottom: $space-sm;
+}
+
+.text {
+  color: $color-text-muted;
+  line-height: 1.7;
+  margin-bottom: $space-lg;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  justify-content: center;
+  margin-bottom: $space-md;
+}
+
+.link {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: $color-gold-dark;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: $color-gold;
+  }
+}

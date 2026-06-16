@@ -17,7 +17,10 @@ const heebo = Heebo({
 });
 
 export const metadata: Metadata = {
-  title: "ליאת לפיד | משרד עורכי דין — דיני עבודה",
+  title: {
+    default: "ליאת לפיד | משרד עורכי דין — דיני עבודה",
+    template: "%s | ליאת לפיד",
+  },
   description: "משרד עורכי דין ליאת לפיד — ייעוץ וייצוג בתחום דיני העבודה",
 };
 

@@ -1,6 +1,25 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
+.skipLink {
+  position: absolute;
+  inset-inline-start: $space-sm;
+  top: -100%;
+  z-index: 1000;
+  padding: 0.625rem 1rem;
+  background: $color-gold;
+  color: $color-navy;
+  font-weight: 600;
+  border-radius: $radius-sm;
+  transition: top $transition-fast;
+
+  &:focus {
+    top: $space-sm;
+    outline: 2px solid $color-white;
+    outline-offset: 2px;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
